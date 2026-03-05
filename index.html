@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 知识词云</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">AI 知识词云</h1>
+      <p class="site-subtitle">点击词云中的词，查看解释与相关概念</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="word-cloud-section">
+      <h2 class="section-title">知识词云</h2>
+      <div id="wordCloudContainer" class="word-cloud" aria-label="AI 知识词云"></div>
+    </section>
+
+    <section class="detail-section" aria-live="polite">
+      <h2 class="section-title">知识点详情</h2>
+      <div id="detailPanel" class="detail-panel">
+        <div class="detail-empty">
+          <p>从左侧词云中选择一个词，查看该知识点的简介与相关词汇。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>构建你的 AI 知识地图 · 词云仅为示意，可按需扩展搜索、分类等功能。</p>
+  </footer>
+
+  <script src="./scripts/app.js"></script>
+</body>
+</html>
+
