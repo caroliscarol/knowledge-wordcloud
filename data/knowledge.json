@@ -4,91 +4,160 @@
     "label": "OpenAI",
     "description": "OpenAI 是一家专注于通用人工智能（AGI）研究与应用的公司，推出了 GPT 系列大模型和 ChatGPT 等产品，在自然语言处理、代码生成、多模态理解等方向具有代表性。",
     "related": ["chatgpt", "gpt", "api", "microsoft"],
-    "weight": 5
+    "weight": 5,
+    "category": "company"
   },
   {
     "id": "google",
     "label": "Google",
     "description": "Google 是全球知名的科技公司，在搜索引擎、云计算、移动操作系统等领域占据重要地位，也在大模型和生成式 AI 方面持续投入，如 Gemini 模型家族。",
     "related": ["gemini", "deepmind", "search_engine"],
-    "weight": 4
+    "weight": 4,
+    "category": "company"
   },
   {
     "id": "chatgpt",
     "label": "ChatGPT",
     "description": "ChatGPT 是基于 GPT 系列大模型构建的对话式 AI 助手，能够进行自然语言对话、回答问题、写作、编程辅助等，是生成式 AI 普及的重要产品之一。",
     "related": ["gpt", "openai", "assistant", "api"],
-    "weight": 5
+    "weight": 5,
+    "category": "assistant"
   },
   {
     "id": "gpt",
     "label": "GPT",
     "description": "GPT（Generative Pre-trained Transformer）是一类基于 Transformer 架构的大规模语言模型，通过预训练和微调，在文本生成、问答、翻译、代码生成等任务上表现突出。",
     "related": ["chatgpt", "openai", "transformer"],
-    "weight": 4
+    "weight": 4,
+    "category": "model"
   },
   {
     "id": "claude",
     "label": "Claude",
     "description": "Claude 是 Anthropic 推出的对话式大语言模型，强调安全性、可控性和对齐，常用于问答、写作和企业知识助手等场景。",
     "related": ["anthropic", "assistant", "alignment"],
-    "weight": 3
+    "weight": 3,
+    "category": "assistant"
   },
   {
     "id": "gemini",
     "label": "Gemini",
     "description": "Gemini 是 Google 发布的多模态大模型系列，支持文本、图像、音频等多种模态输入，在搜索增强、代码辅助和应用集成方面有广泛应用。",
     "related": ["google", "deepmind", "multimodal"],
-    "weight": 3
+    "weight": 3,
+    "category": "model"
   },
   {
     "id": "doubao",
     "label": "豆包",
     "description": "豆包是字节跳动推出的中文大模型应用和助手品牌，面向日常问答、写作、办公效率等场景，结合飞书、抖音等生态提供多种接入方式。",
     "related": ["bytedance", "chinese_llm"],
-    "weight": 3
+    "weight": 3,
+    "category": "assistant"
   },
   {
     "id": "anthropic",
     "label": "Anthropic",
     "description": "Anthropic 是一家专注于安全、对齐研究的 AI 公司，推出了 Claude 系列模型，主打企业级 AI 助手和安全性。",
     "related": ["claude", "alignment"],
-    "weight": 2
+    "weight": 2,
+    "category": "company"
   },
   {
     "id": "deepmind",
     "label": "DeepMind",
     "description": "DeepMind 是 Google 旗下专注于 AI 研究的团队，在强化学习、AlphaGo、AlphaFold 等领域具有代表性，也参与 Gemini 等大模型的研发。",
     "related": ["google", "gemini"],
-    "weight": 2
+    "weight": 2,
+    "category": "company"
   },
   {
     "id": "api",
     "label": "API",
     "description": "在大模型场景下，API 通常指通过网络接口调用模型服务，例如 OpenAI API、各云厂商大模型 API，可集成到应用中实现对话、补全、搜索增强等功能。",
     "related": ["openai", "chatgpt"],
-    "weight": 2
+    "weight": 2,
+    "category": "tool"
   },
   {
     "id": "assistant",
     "label": "AI 助手",
     "description": "AI 助手是基于大模型构建的产品形态之一，面向终端用户或开发者，提供对话、写作、编程、知识问答等功能。",
     "related": ["chatgpt", "claude", "doubao"],
-    "weight": 2
+    "weight": 2,
+    "category": "concept"
   },
   {
     "id": "transformer",
     "label": "Transformer",
     "description": "Transformer 是一种基于自注意力机制的神经网络架构，是现代大语言模型（如 GPT、Gemini 等）的基础，对自然语言处理领域产生了深远影响。",
     "related": ["gpt"],
-    "weight": 2
+    "weight": 2,
+    "category": "technique"
   },
   {
     "id": "multimodal",
     "label": "多模态",
     "description": "多模态模型能够同时理解和处理多种形式的数据，如文本、图像、音频和视频，在搜索、创作和机器人等领域有重要应用。",
     "related": ["gemini"],
-    "weight": 1
+    "weight": 1,
+    "category": "concept"
+  },
+  {
+    "id": "openclaw",
+    "label": "OpenClaw",
+    "description": "OpenClaw 在这里可以代表面向垂直领域（如法律、合规等）的专业大模型或应用，体现“为特定行业定制的智能助手”。",
+    "related": ["gpt", "chatgpt", "api"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "yuanbao",
+    "label": "元宝",
+    "description": "元宝代表国内面向办公、创作、问答等场景的大模型应用品牌，可以视作一个综合型中文 AI 助手。",
+    "related": ["doubao", "assistant"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "minimax",
+    "label": "MiniMax",
+    "description": "MiniMax 是一家国内的 AI 公司，提供多模态大模型和对话式 AI 服务，面向消费级与企业级多种应用场景。",
+    "related": ["openai", "anthropic", "doubao"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "deepseek",
+    "label": "DeepSeek",
+    "description": "DeepSeek 通常指国产/开源方向的大模型项目或品牌，强调高性价比与开放生态，支持代码生成、问答等多种任务。",
+    "related": ["gpt", "gemini", "transformer"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "agent",
+    "label": "Agent",
+    "description": "Agent（智能体）是基于大模型构建的主动执行单元，可以围绕某个目标自主规划步骤、调用工具并迭代完成任务。",
+    "related": ["assistant", "api", "mcp"],
+    "weight": 3,
+    "category": "concept"
+  },
+  {
+    "id": "mcp",
+    "label": "MCP",
+    "description": "MCP（Model Context Protocol）是一种让大模型通过统一协议访问外部工具和数据源的规范，用于构建更强的 Agent 与应用生态。",
+    "related": ["agent", "api", "openai"],
+    "weight": 2,
+    "category": "tool"
+  },
+  {
+    "id": "skill",
+    "label": "Skill",
+    "description": "在大模型与 Agent 语境下，Skill 通常指可复用的能力模块或任务模板，例如“翻译”“写周报”“生成代码”等。",
+    "related": ["assistant", "agent"],
+    "weight": 2,
+    "category": "concept"
   }
 ]
 

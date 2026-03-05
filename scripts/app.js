@@ -5,17 +5,15 @@
   const knowledgeMap = {};
   let currentSelectedId = null;
 
-  const palette = [
-    "rgba(96, 165, 250, 0.9)",
-    "rgba(129, 140, 248, 0.9)",
-    "rgba(56, 189, 248, 0.9)",
-    "rgba(236, 72, 153, 0.9)",
-    "rgba(52, 211, 153, 0.9)"
-  ];
-
-  function pickColor(index) {
-    return palette[index % palette.length];
-  }
+  const categoryLabels = {
+    company: "公司",
+    model: "模型",
+    tool: "工具",
+    assistant: "助手",
+    concept: "概念",
+    technique: "技术",
+    other: "其他"
+  };
 
   async function loadKnowledgeData() {
     const response = await fetch(DATA_URL);
@@ -59,10 +57,13 @@
       span.dataset.id = item.id;
       const weight = Number(item.weight) || 3;
       span.dataset.weight = String(Math.min(Math.max(weight, 1), 5));
-      span.style.backgroundColor = "rgba(15, 23, 42, 0.7)";
-      span.style.border = "1px solid rgba(148, 163, 184, 0.5)";
-      span.style.color = pickColor(index);
+      span.dataset.category = item.category || "other";
       span.setAttribute("aria-label", (item.label || item.id) + " 知识点");
+
+      const jitterX = (Math.random() - 0.5) * 26; // -13px ~ 13px
+      const jitterY = (Math.random() - 0.5) * 20; // -10px ~ 10px
+      span.style.setProperty("--jitter-x", `${jitterX}px`);
+      span.style.setProperty("--jitter-y", `${jitterY}px`);
 
       span.addEventListener("click", () => {
         showDetailById(item.id);
@@ -88,9 +89,20 @@
 
     detailPanel.innerHTML = "";
 
+    const header = document.createElement("div");
+    header.className = "detail-header";
+
     const title = document.createElement("h3");
     title.className = "detail-title";
     title.textContent = item.label || item.id;
+
+    const category = document.createElement("span");
+    category.className = "detail-category";
+    const categoryKey = item.category || "other";
+    category.textContent = categoryLabels[categoryKey] || categoryLabels.other;
+
+    header.appendChild(title);
+    header.appendChild(category);
 
     const desc = document.createElement("p");
     desc.className = "detail-description";
@@ -128,7 +140,7 @@
       });
     }
 
-    detailPanel.appendChild(title);
+    detailPanel.appendChild(header);
     detailPanel.appendChild(desc);
     detailPanel.appendChild(relatedLabel);
     detailPanel.appendChild(relatedWrap);

@@ -109,6 +109,7 @@ body::after {
   color: var(--text-muted);
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .word-cloud-section,
@@ -118,13 +119,11 @@ body::after {
 
 .word-cloud {
   min-height: 260px;
-  padding: 10px 10px 12px;
+  padding: 10px 0 12px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px 10px;
   align-content: flex-start;
-  background-color: #ffffff;
-  border-radius: 12px;
 }
 
 .word-item {
@@ -135,9 +134,11 @@ body::after {
   border-radius: 999px;
   cursor: pointer;
   text-decoration: none;
-  border: 1px solid var(--accent-subtle);
-  background-color: #ffffff;
+  border: none;
+  background-color: transparent;
   color: var(--accent);
+  font-weight: 600;
+  transform: translate(var(--jitter-x, 0px), var(--jitter-y, 0px));
   transition:
     background-color var(--transition-fast),
     color var(--transition-fast),
@@ -147,10 +148,12 @@ body::after {
 }
 
 .word-item:hover {
-  background-color: var(--accent-soft);
-  border-color: var(--accent);
+  background-color: transparent;
   color: var(--text-main);
-  transform: translateY(-1px);
+  transform: translate(
+    var(--jitter-x, 0px),
+    calc(var(--jitter-y, 0px) - 2px)
+  );
 }
 
 .word-item.selected {
@@ -162,32 +165,49 @@ body::after {
 .word-item[data-weight="1"]:not(.selected) {
   font-size: 0.85rem;
   opacity: 0.9;
-  border-color: #dfcfd0;
-  color: #dfcfd0;
 }
 
 .word-item[data-weight="2"]:not(.selected) {
   font-size: 0.95rem;
-  border-color: #dfcfd0;
-  color: #dfcfd0;
 }
 
 .word-item[data-weight="3"]:not(.selected) {
   font-size: 1.02rem;
-  border-color: #d199a4;
-  color: #d199a4;
 }
 
 .word-item[data-weight="4"]:not(.selected) {
   font-size: 1.12rem;
-  border-color: #d199a4;
-  color: #d199a4;
 }
 
 .word-item[data-weight="5"]:not(.selected) {
   font-size: 1.24rem;
+}
+
+.word-item[data-category="company"]:not(.selected) {
+  border-color: #d199a4;
+  color: #d199a4;
+}
+
+.word-item[data-category="model"]:not(.selected) {
   border-color: #464358;
   color: #464358;
+}
+
+.word-item[data-category="tool"]:not(.selected) {
+  border-color: #dfcfd0;
+  color: #dfcfd0;
+}
+
+.word-item[data-category="assistant"]:not(.selected) {
+  border-color: #f0b9c2;
+  color: #f0b9c2;
+}
+
+.word-item[data-category="concept"]:not(.selected),
+.word-item[data-category="technique"]:not(.selected),
+.word-item[data-category="other"]:not(.selected) {
+  border-color: #7e6a7a;
+  color: #7e6a7a;
 }
 
 .detail-panel {
@@ -203,11 +223,30 @@ body::after {
   font-size: 0.92rem;
 }
 
+.detail-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 6px;
+}
+
 .detail-title {
-  margin: 0 0 8px;
+  margin: 0;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-main);
+}
+
+.detail-category {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--accent-subtle);
+  font-size: 0.78rem;
+  color: var(--text-main);
+  background-color: #ffffff;
 }
 
 .detail-description {
