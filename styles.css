@@ -27,6 +27,8 @@ body {
     "Segoe UI", sans-serif;
   background: linear-gradient(to bottom, #f5e1e3 0%, #ffffff 40%, #dfcfd0 100%);
   color: var(--text-main);
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -63,17 +65,13 @@ body::after {
 }
 
 .site-header {
-  padding: 24px 20px 8px;
+  padding: 12px 20px 0;
 }
 
 .header-inner {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 16px 20px 18px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  padding: 0;
 }
 
 .site-title {
@@ -99,7 +97,14 @@ body::after {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   gap: 18px;
-  align-items: flex-start;
+  align-items: stretch;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.word-cloud-header {
+  text-align: center;
+  margin-bottom: 6px;
 }
 
 .section-title {
@@ -115,6 +120,19 @@ body::after {
 .word-cloud-section,
 .detail-section {
   padding: 14px 0 16px;
+}
+
+.detail-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+}
+
+.word-cloud-section {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .word-cloud-controls {
@@ -219,6 +237,8 @@ body::after {
   flex-wrap: wrap;
   gap: 8px 10px;
   align-content: flex-start;
+  flex: 1;
+  overflow: auto;
 }
 
 .word-item {

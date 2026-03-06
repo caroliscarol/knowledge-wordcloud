@@ -9,14 +9,24 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="header-inner">
-      <h1 class="site-title">AI 知识词云</h1>
-      <p class="site-subtitle">点击词云中的词，查看解释与相关概念</p>
-    </div>
+    <div class="header-inner"></div>
   </header>
 
   <main class="layout">
+    <section class="detail-section" aria-live="polite">
+      <h2 class="section-title">知识点详情</h2>
+      <div id="detailPanel" class="detail-panel">
+        <div class="detail-empty">
+          <p>从右侧词云中选择一个词，查看该知识点的简介与相关词汇。</p>
+        </div>
+      </div>
+    </section>
+
     <section class="word-cloud-section">
+      <div class="word-cloud-header">
+        <h1 class="site-title">AI 知识词云</h1>
+        <p class="site-subtitle">点击词云中的词，查看解释与相关概念</p>
+      </div>
       <h2 class="section-title">知识词云</h2>
       <div class="word-cloud-controls">
         <div class="word-cloud-controls-top">
@@ -44,15 +54,6 @@
         </div>
       </div>
       <div id="wordCloudContainer" class="word-cloud" aria-label="AI 知识词云"></div>
-    </section>
-
-    <section class="detail-section" aria-live="polite">
-      <h2 class="section-title">知识点详情</h2>
-      <div id="detailPanel" class="detail-panel">
-        <div class="detail-empty">
-          <p>从左侧词云中选择一个词，查看该知识点的简介与相关词汇。</p>
-        </div>
-      </div>
     </section>
   </main>
 
