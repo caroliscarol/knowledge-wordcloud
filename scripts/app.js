@@ -3,7 +3,12 @@
 
   /** @type {Record<string, any>} */
   const knowledgeMap = {};
+  /** @type {any[]} */
+  let allItems = [];
   let currentSelectedId = null;
+  let showOnlyImportant = false;
+  let activeCategory = null; // null 表示全部
+  let searchKeyword = "";
 
   const categoryLabels = {
     company: "公司",
@@ -14,6 +19,22 @@
     technique: "技术",
     other: "其他"
   };
+
+  function splitLabel(raw) {
+    const label = (raw || "").trim();
+    if (!label) {
+      return { primary: "", secondary: "" };
+    }
+    // 简单规则：如果既包含中文又包含空格，则按第一个空格拆成「中文部分 + 英文部分」
+    const hasChinese = /[\u4e00-\u9fa5]/.test(label);
+    const spaceIndex = label.indexOf(" ");
+    if (hasChinese && spaceIndex > 0) {
+      const primary = label.slice(0, spaceIndex).trim();
+      const secondary = label.slice(spaceIndex + 1).trim();
+      return { primary, secondary };
+    }
+    return { primary: label, secondary: "" };
+  }
 
   async function loadKnowledgeData() {
     const response = await fetch(DATA_URL);
@@ -39,21 +60,52 @@
     }
   }
 
-  function renderWordCloud(items) {
+  function getVisibleItems() {
+    if (!Array.isArray(allItems)) return [];
+
+    return allItems.filter((item) => {
+      const weight = Number(item.weight) || 3;
+
+      if (activeCategory && item.category !== activeCategory) {
+        return false;
+      }
+
+      if (showOnlyImportant && weight < 4) {
+        return false;
+      }
+
+      if (searchKeyword) {
+        const label = (item.label || "").toLowerCase();
+        const id = (item.id || "").toLowerCase();
+        const text = label + " " + id;
+        if (!text.includes(searchKeyword)) {
+          return false;
+        }
+      }
+
+      return true;
+    });
+  }
+
+  function renderWordCloud() {
+    const items = getVisibleItems().slice();
+    // 随机打散词云展示顺序
+    items.sort(() => Math.random() - 0.5);
     const container = document.getElementById("wordCloudContainer");
     if (!container) return;
     container.innerHTML = "";
 
     if (!items.length) {
-      container.textContent = "暂无知识点数据。请检查 data/knowledge.json。";
+      container.textContent = "暂无匹配的词汇，请调整搜索或筛选条件。";
       return;
     }
 
-    items.forEach((item, index) => {
+    items.forEach((item) => {
       const span = document.createElement("button");
       span.type = "button";
       span.className = "word-item";
-      span.textContent = item.label || item.id;
+      const { primary } = splitLabel(item.label || item.id);
+      span.textContent = primary || item.label || item.id;
       span.dataset.id = item.id;
       const weight = Number(item.weight) || 3;
       span.dataset.weight = String(Math.min(Math.max(weight, 1), 5));
@@ -70,6 +122,101 @@
       });
 
       container.appendChild(span);
+    });
+  }
+
+  function bindImportantToggle() {
+    const btn = document.getElementById("toggleImportant");
+    if (!btn) return;
+
+    btn.addEventListener("click", () => {
+      showOnlyImportant = !showOnlyImportant;
+      btn.classList.toggle("toggle-important--active", showOnlyImportant);
+      btn.textContent = showOnlyImportant ? "显示全部" : "只看重点词";
+
+      const visibleBefore = getVisibleItems();
+      const hadCurrentVisible =
+        currentSelectedId &&
+        visibleBefore.some((item) => item.id === currentSelectedId);
+
+      renderWordCloud();
+
+      const visibleAfter = getVisibleItems();
+      if (!visibleAfter.length) return;
+
+      if (hadCurrentVisible && visibleAfter.some((item) => item.id === currentSelectedId)) {
+        showDetailById(currentSelectedId);
+      } else {
+        showDetailById(visibleAfter[0].id);
+      }
+    });
+  }
+
+  function bindSearchInput() {
+    const input = document.getElementById("wordSearch");
+    if (!input) return;
+
+    input.addEventListener("input", () => {
+      searchKeyword = input.value.toLowerCase().trim();
+      renderWordCloud();
+      const visible = getVisibleItems();
+      if (visible.length) {
+        const stillVisible = visible.some((item) => item.id === currentSelectedId);
+        if (!stillVisible) {
+          showDetailById(visible[0].id);
+        }
+      }
+    });
+  }
+
+  function bindCategoryFilters() {
+    const buttons = document.querySelectorAll(".category-filter");
+    if (!buttons.length) return;
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const cat = btn.dataset.category;
+        activeCategory = cat === "all" ? null : cat || null;
+
+        buttons.forEach((b) => b.classList.remove("category-filter--active"));
+        btn.classList.add("category-filter--active");
+
+        renderWordCloud();
+        const visible = getVisibleItems();
+        if (visible.length) {
+          const stillVisible = visible.some((item) => item.id === currentSelectedId);
+          if (!stillVisible) {
+            showDetailById(visible[0].id);
+          }
+        }
+      });
+    });
+  }
+
+  function bindImportantToggle() {
+    const btn = document.getElementById("toggleImportant");
+    if (!btn) return;
+
+    btn.addEventListener("click", () => {
+      showOnlyImportant = !showOnlyImportant;
+      btn.classList.toggle("toggle-important--active", showOnlyImportant);
+      btn.textContent = showOnlyImportant ? "显示全部" : "只看重点词";
+
+      const visibleBefore = getVisibleItems();
+      const hadCurrentVisible =
+        currentSelectedId &&
+        visibleBefore.some((item) => item.id === currentSelectedId);
+
+      renderWordCloud();
+
+      const visibleAfter = getVisibleItems();
+      if (!visibleAfter.length) return;
+
+      if (hadCurrentVisible && visibleAfter.some((item) => item.id === currentSelectedId)) {
+        showDetailById(currentSelectedId);
+      } else {
+        showDetailById(visibleAfter[0].id);
+      }
     });
   }
 
@@ -94,7 +241,15 @@
 
     const title = document.createElement("h3");
     title.className = "detail-title";
-    title.textContent = item.label || item.id;
+    const { primary, secondary } = splitLabel(item.label || item.id);
+    title.textContent = primary || item.label || item.id;
+
+    let secondarySpan = null;
+    if (secondary) {
+      secondarySpan = document.createElement("span");
+      secondarySpan.className = "detail-title-secondary";
+      secondarySpan.textContent = secondary;
+    }
 
     const category = document.createElement("span");
     category.className = "detail-category";
@@ -102,6 +257,9 @@
     category.textContent = categoryLabels[categoryKey] || categoryLabels.other;
 
     header.appendChild(title);
+    if (secondarySpan) {
+      header.appendChild(secondarySpan);
+    }
     header.appendChild(category);
 
     const desc = document.createElement("p");
@@ -158,11 +316,16 @@
 
     try {
       const items = await loadKnowledgeData();
-      buildKnowledgeMap(items);
-      renderWordCloud(items);
+      allItems = items.slice();
+      buildKnowledgeMap(allItems);
+      bindSearchInput();
+      bindCategoryFilters();
+      bindImportantToggle();
+      renderWordCloud();
 
-      if (items.length) {
-        showDetailById(items[0].id);
+      const visible = getVisibleItems();
+      if (visible.length) {
+        showDetailById(visible[0].id);
       } else if (detailPanel) {
         detailPanel.innerHTML = `
           <div class="detail-empty">

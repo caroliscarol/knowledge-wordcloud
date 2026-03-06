@@ -18,6 +18,31 @@
   <main class="layout">
     <section class="word-cloud-section">
       <h2 class="section-title">知识词云</h2>
+      <div class="word-cloud-controls">
+        <div class="word-cloud-controls-top">
+          <span class="cloud-hint">词越大越重要，可点击查看详情</span>
+          <input
+            id="wordSearch"
+            class="word-search-input"
+            type="text"
+            placeholder="搜索词汇（支持中英文）"
+          />
+        </div>
+        <div class="word-cloud-filters">
+          <div class="category-filters">
+            <button class="category-filter category-filter--active" data-category="all">全部</button>
+            <button class="category-filter" data-category="company">公司</button>
+            <button class="category-filter" data-category="model">模型</button>
+            <button class="category-filter" data-category="tool">工具</button>
+            <button class="category-filter" data-category="assistant">助手</button>
+            <button class="category-filter" data-category="concept">概念</button>
+            <button class="category-filter" data-category="technique">技术</button>
+          </div>
+          <button id="toggleImportant" class="toggle-important" type="button">
+            只看重点词
+          </button>
+        </div>
+      </div>
       <div id="wordCloudContainer" class="word-cloud" aria-label="AI 知识词云"></div>
     </section>
 

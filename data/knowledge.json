@@ -158,6 +158,582 @@
     "related": ["assistant", "agent"],
     "weight": 2,
     "category": "concept"
+  },
+  {
+    "id": "bytedance",
+    "label": "字节跳动 ByteDance",
+    "description": "字节跳动是中国互联网公司，旗下有抖音、今日头条等产品，并推出豆包大模型、豆包 App 等 AI 应用。",
+    "related": ["doubao", "yuanbao"],
+    "weight": 4,
+    "category": "company"
+  },
+  {
+    "id": "alibaba",
+    "label": "阿里巴巴 Alibaba",
+    "description": "阿里巴巴是中国综合性互联网公司，在电商、云计算和金融科技等领域布局，并推出通义千问大模型及相关 AI 产品。",
+    "related": ["qwen-series"],
+    "weight": 4,
+    "category": "company"
+  },
+  {
+    "id": "tencent",
+    "label": "腾讯 Tencent",
+    "description": "腾讯是中国互联网公司，业务涵盖社交、游戏、云计算等，并推出混元大模型与星辰 Agent 平台等 AI 能力。",
+    "related": ["mixyuan-series"],
+    "weight": 4,
+    "category": "company"
+  },
+  {
+    "id": "baidu",
+    "label": "百度 Baidu",
+    "description": "百度是中国搜索与人工智能公司，重点投入自动驾驶和大模型，推出文心大模型、文心 App 和文心千帆平台。",
+    "related": ["wenxin-series"],
+    "weight": 4,
+    "category": "company"
+  },
+  {
+    "id": "zhipu-ai",
+    "label": "智谱AI Zhipu AI",
+    "description": "智谱 AI 是国内专注大模型研发的公司，推出 GLM 系列模型以及智谱清言等产品。",
+    "related": ["glm-series"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "moonshot-ai",
+    "label": "月之暗面 Moonshot AI",
+    "description": "月之暗面是一家中国大模型创业公司，推出 Kimi 等面向长文档和长上下文场景的智能助手。",
+    "related": ["kimi-app"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "iflytek",
+    "label": "科大讯飞 iFlytek",
+    "description": "科大讯飞是中国语音和人工智能公司，在语音识别、教育和办公场景有大量应用，并推出星火大模型及相关硬件。",
+    "related": ["spark-series"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "unitree",
+    "label": "宇树科技 Unitree",
+    "description": "宇树科技是一家专注于四足和人形机器人的公司，其具身智能平台常被用于研究和应用示范。",
+    "related": ["embodied-ai", "robot"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "songyan-power",
+    "label": "松延动力 Songyan Power",
+    "description": "松延动力围绕智能机器人和具身智能相关硬件开展研发，关注动力系统与控制技术。",
+    "related": ["embodied-ai"],
+    "weight": 2,
+    "category": "company"
+  },
+  {
+    "id": "magic-atom",
+    "label": "魔法原子 Magic Atom",
+    "description": "魔法原子专注于机器人和具身智能方向，探索面向日常场景的智能机器人产品形态。",
+    "related": ["embodied-ai", "robot"],
+    "weight": 2,
+    "category": "company"
+  },
+  {
+    "id": "galaxy-general",
+    "label": "银河通用 Galaxy General",
+    "description": "银河通用聚焦通用机器人与具身智能系统，探索 AI 在工业与服务场景中的落地。",
+    "related": ["embodied-ai"],
+    "weight": 2,
+    "category": "company"
+  },
+  {
+    "id": "autonavi-ai-lab",
+    "label": "高德地图 AI Lab",
+    "description": "高德地图 AI Lab 是高德在导航、自动驾驶和多模态感知方向的研究团队，参与 ABot-N0 等导航相关模型研发。",
+    "related": ["abot-n0", "autodrive"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "opendrivelab",
+    "label": "OpenDriveLab",
+    "description": "OpenDriveLab 是聚焦自动驾驶和视觉导航研究的开放实验室，提出 SparseVideoNav 等导航相关技术方案。",
+    "related": ["sparsevideonav", "vln", "world-model"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "zhejiang-university",
+    "label": "浙江大学 Zhejiang University",
+    "description": "浙江大学在计算机视觉、机器人和多模态导航等方向有前沿研究成果，例如 NavDreamer 等工作。",
+    "related": ["navdreamer", "vln"],
+    "weight": 2,
+    "category": "company"
+  },
+  {
+    "id": "pony-ai",
+    "label": "小马智行 Pony.ai",
+    "description": "小马智行是一家自动驾驶公司，专注于 Robotaxi 等出行服务，应用大量感知、预测与规划相关的 AI 技术。",
+    "related": ["autodrive", "world-model"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "li-auto",
+    "label": "理想 Li Auto",
+    "description": "理想汽车是中国新能源车企之一，在智能驾驶与车载大模型应用上持续投入。",
+    "related": ["autodrive"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "xpeng",
+    "label": "小鹏 Xpeng",
+    "description": "小鹏汽车是中国新能源与智能驾驶领域的车企代表之一，在高阶辅助驾驶和车载 AI 能力上有多轮迭代。",
+    "related": ["autodrive"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "gpt5-series",
+    "label": "GPT-5 系列 GPT-5.3 Codex",
+    "description": "GPT-5 系列是 OpenAI 规划的新一代大模型家族，用于多任务、多模态和更强推理能力，其中 GPT-5.3 Codex 更偏向代码与开发场景。",
+    "related": ["gpt", "openai", "chatgpt"],
+    "weight": 5,
+    "category": "model"
+  },
+  {
+    "id": "o-series",
+    "label": "o 系列 o3",
+    "description": "o 系列模型（例如 o3）代表面向高可靠推理和工具调用的新一代模型路线，强调在复杂任务上的稳定性和可控性。",
+    "related": ["gpt", "openai"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "codex-series",
+    "label": "Codex 系列 codex-1",
+    "description": "Codex 系列是专门面向代码理解与生成的模型家族，codex-1 可用于补全代码、解释代码和生成简单程序。",
+    "related": ["gpt", "chatgpt", "assistant"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "claude-series",
+    "label": "Claude 系列 Opus/Sonnet/Haiku",
+    "description": "Claude 系列包括 Opus、Sonnet、Haiku 等模型档位，分别面向高性能、平衡和轻量使用场景。",
+    "related": ["claude", "anthropic"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "gemini-series",
+    "label": "Gemini 系列 3.1 Pro/Ultra/Flash/Nano",
+    "description": "Gemini 系列是 Google 推出的多模态大模型家族，从 Ultra 到 Nano 覆盖云端到端侧的多种设备与场景。",
+    "related": ["gemini", "google-deepmind", "google"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "veo-3-1",
+    "label": "Veo 3.1",
+    "description": "Veo 3.1 是 Google 面向视频生成与理解的多模态模型，用于生成高质量的视频内容。",
+    "related": ["gemini", "multimodal"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "gemma-series",
+    "label": "Gemma 系列",
+    "description": "Gemma 系列是 Google 推出的轻量级开源大模型家族，适合在本地或资源有限的环境中部署。",
+    "related": ["google", "open-source-model"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "translategemma",
+    "label": "TranslateGemma",
+    "description": "TranslateGemma 是面向机器翻译任务优化的 Gemma 变体，用于高质量多语言翻译。",
+    "related": ["gemma-series"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "sora-2",
+    "label": "Sora 2",
+    "description": "Sora 2 代表新一代视频生成与世界建模方向的模型，能够从文本生成复杂动态场景的视频内容。",
+    "related": ["multimodal", "world-model"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "stable-diffusion-model",
+    "label": "Stable Diffusion",
+    "description": "Stable Diffusion 是稳定扩散系列的图像生成模型，支持通过文本控制的高质量图像合成，并有大量社区衍生版本。",
+    "related": ["multimodal"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "runway-gen-series",
+    "label": "Runway Gen 系列",
+    "description": "Runway Gen 系列是 Runway 推出的图像与视频生成模型，用于创意视频制作和视觉特效。",
+    "related": ["stable-diffusion-model", "multimodal"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "pika-model",
+    "label": "Pika 模型",
+    "description": "Pika 模型用于从文本或图像生成短视频内容，强调易用性和创作效率。",
+    "related": ["multimodal"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "elevenlabs-voice-model",
+    "label": "ElevenLabs 语音模型",
+    "description": "ElevenLabs 语音模型专注于高保真语音合成和变声，支持多语言和情感表达。",
+    "related": ["multimodal"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "watsonx-model",
+    "label": "WatsonX 模型",
+    "description": "WatsonX 是 IBM 面向企业场景提供的大模型与多模态能力集合，用于文档理解、对话和代码等任务。",
+    "related": ["ibm"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "fsd-world-model",
+    "label": "FSD 世界模型",
+    "description": "FSD 世界模型指 Tesla 在自动驾驶 FSD 系统中使用的世界建模能力，用于预测道路和交通参与者行为。",
+    "related": ["world-model", "tesla"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "waymo-4d-world-model",
+    "label": "Waymo 4D 世界模型",
+    "description": "Waymo 的 4D 世界模型用于自动驾驶中的时空感知和长期轨迹预测。",
+    "related": ["world-model", "waymo"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "nvidia-world-foundation-model",
+    "label": "NVIDIA 世界基础模型",
+    "description": "NVIDIA 世界基础模型是一类面向仿真和机器人控制的通用世界模型，用于物理仿真与策略学习。",
+    "related": ["world-model", "nvidia"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "firefly-model",
+    "label": "Adobe Firefly 模型",
+    "description": "Firefly 模型是 Adobe 面向创意设计场景推出的图像生成和编辑模型，集成在多个创意工具中。",
+    "related": ["multimodal", "adobe"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "seaverse-engine",
+    "label": "SeaVerse AI 原生引擎",
+    "description": "SeaVerse AI 原生引擎用于支持 AI 原生创作流程，兼具多模态生成与编辑能力。",
+    "related": ["multimodal"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "gibo-multimodal-engine",
+    "label": "GIBO 多模态引擎",
+    "description": "GIBO AIGC 多模态引擎可生成视频、图像、文本和音频等多种内容形态。",
+    "related": ["multimodal"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "doubao-model",
+    "label": "豆包大模型 Doubao",
+    "description": "豆包大模型是字节跳动推出的中文大语言模型，服务于豆包 App 等多个应用场景。",
+    "related": ["doubao", "bytedance"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "seedance-2-0",
+    "label": "Seedance 2.0",
+    "description": "Seedance 2.0 是面向视频生成和编辑的多模态模型，用于创意短视频创作。",
+    "related": ["multimodal"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "qwen-series",
+    "label": "千问系列 Qwen 3.5",
+    "description": "千问系列是阿里巴巴推出的大模型家族，Qwen 3.5 代表新一代通用模型版本。",
+    "related": ["alibaba"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "mixyuan-series",
+    "label": "混元系列",
+    "description": "混元系列是腾讯推出的大模型家族，覆盖文本生成、多模态和 3D 等方向。",
+    "related": ["tencent"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "wenxin-series",
+    "label": "文心大模型 Wenxin",
+    "description": "文心大模型是百度推出的大模型家族，文心 5.0 是其中的重要版本，用于搜索增强和对话应用。",
+    "related": ["baidu"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "deepseek-v3",
+    "label": "DeepSeek V3",
+    "description": "DeepSeek V3 是 DeepSeek 系列大模型的版本之一，在推理和代码任务上有较强表现。",
+    "related": ["deepseek"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "deepseek-v4",
+    "label": "DeepSeek V4",
+    "description": "DeepSeek V4 是 DeepSeek 系列的进一步迭代，强调更强的多任务能力和长上下文处理能力。",
+    "related": ["deepseek"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "glm-5",
+    "label": "GLM-5",
+    "description": "GLM-5 是智谱 AI 推出的新一代大模型版本，面向通用问答、代码和工具调用等任务。",
+    "related": ["zhipu-ai"],
+    "weight": 4,
+    "category": "model"
+  },
+  {
+    "id": "m2-5-minimax",
+    "label": "M2.5 MiniMax",
+    "description": "M2.5 是 MiniMax 推出的模型版本，用于多轮对话和复杂任务处理。",
+    "related": ["minimax"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "kimi-k2-5",
+    "label": "Kimi K2.5",
+    "description": "Kimi K2.5 是 Kimi 系列面向长文本与检索增强场景的模型版本。",
+    "related": ["moonshot-ai"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "spark-x2",
+    "label": "星火 X2",
+    "description": "星火 X2 是科大讯飞星火大模型家族中的版本之一，用于中文理解、写作和教育等场景。",
+    "related": ["iflytek"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "abot-n0",
+    "label": "ABot-N0",
+    "description": "ABot-N0 是高德地图 AI Lab 提出的导航相关模型，用于结合地图与视觉信息的路径规划。",
+    "related": ["autonavi-ai-lab", "vln"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "sparsevideonav",
+    "label": "SparseVideoNav",
+    "description": "SparseVideoNav 是 OpenDriveLab 提出的基于稀疏视频的导航模型，用于视觉语言导航任务。",
+    "related": ["opendrivelab", "vln", "world-model"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "navdreamer",
+    "label": "NavDreamer",
+    "description": "NavDreamer 是由浙江大学等提出的利用世界模型进行导航策略学习的研究工作。",
+    "related": ["zhejiang-university", "world-model"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "exaone-4-5",
+    "label": "Exaone 4.5",
+    "description": "Exaone 4.5 是 LG 生态中的大模型版本，用于多语言和多任务场景。",
+    "related": ["multimodal"],
+    "weight": 3,
+    "category": "model"
+  },
+  {
+    "id": "meta",
+    "label": "Meta",
+    "description": "Meta（原 Facebook）是美国科技公司，布局社交网络、AR/VR 和大模型等领域，推出了 LLaMA 系列等开源模型。",
+    "related": ["open-source-model"],
+    "weight": 4,
+    "category": "company"
+  },
+  {
+    "id": "microsoft",
+    "label": "Microsoft",
+    "description": "Microsoft 是美国科技公司，在操作系统、办公软件和云服务领域占据重要地位，并与 OpenAI 深度合作推出 Copilot 等 AI 产品。",
+    "related": ["openai", "microsoft-copilot", "azure-ai"],
+    "weight": 5,
+    "category": "company"
+  },
+  {
+    "id": "amazon",
+    "label": "Amazon",
+    "description": "Amazon 是美国科技与零售公司，在云计算和 AI 服务领域通过 AWS Bedrock 等产品提供大模型能力。",
+    "related": ["aws-bedrock"],
+    "weight": 4,
+    "category": "company"
+  },
+  {
+    "id": "midjourney",
+    "label": "Midjourney",
+    "description": "Midjourney 是一家专注于图像生成的公司，通过 Discord 机器人等形式提供高质量 AI 绘画服务。",
+    "related": ["stable-diffusion-model", "multimodal"],
+    "weight": 4,
+    "category": "company"
+  },
+  {
+    "id": "stability-ai",
+    "label": "Stability AI",
+    "description": "Stability AI 是 Stable Diffusion 等生成式图像模型背后的公司，推动多种开源视觉模型生态。",
+    "related": ["stable-diffusion-model"],
+    "weight": 4,
+    "category": "company"
+  },
+  {
+    "id": "runway",
+    "label": "Runway",
+    "description": "Runway 是一家专注于视频编辑与生成工具的公司，推出 Runway Gen 系列模型和创意工作平台。",
+    "related": ["runway-gen-series"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "pika-labs",
+    "label": "Pika Labs",
+    "description": "Pika Labs 是一家面向短视频生成的公司，提供从文本或图像生成视频的 AI 工具。",
+    "related": ["pika-model"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "elevenlabs",
+    "label": "ElevenLabs",
+    "description": "ElevenLabs 是一家专注于语音生成和变声技术的公司，其语音模型支持多语言和高保真情感合成。",
+    "related": ["elevenlabs-voice-model"],
+    "weight": 4,
+    "category": "company"
+  },
+  {
+    "id": "ibm",
+    "label": "IBM",
+    "description": "IBM 是美国科技公司，在企业级计算和 AI 领域具有悠久历史，推出 WatsonX 等多模态与大模型平台。",
+    "related": ["watsonx-model"],
+    "weight": 4,
+    "category": "company"
+  },
+  {
+    "id": "pulsar-clear",
+    "label": "Pulsar CLEAR",
+    "description": "Pulsar CLEAR 聚焦合规与内容审查场景，利用大模型帮助企业进行文本、图片和视频的合规评估。",
+    "related": ["compliance"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "tesla",
+    "label": "Tesla",
+    "description": "Tesla 是美国电动车和能源公司，在自动驾驶和 FSD 世界模型等方向投入大量 AI 研发。",
+    "related": ["fsd-world-model"],
+    "weight": 5,
+    "category": "company"
+  },
+  {
+    "id": "waymo",
+    "label": "Waymo",
+    "description": "Waymo 是 Alphabet 旗下的自动驾驶公司，专注 Robotaxi 等自动驾驶服务，并研发 4D 世界模型。",
+    "related": ["waymo-4d-world-model"],
+    "weight": 4,
+    "category": "company"
+  },
+  {
+    "id": "nvidia",
+    "label": "NVIDIA",
+    "description": "NVIDIA 是以 GPU 和加速计算著称的公司，同时也构建用于仿真和机器人控制的世界基础模型和仿真平台。",
+    "related": ["nvidia-world-foundation-model"],
+    "weight": 5,
+    "category": "company"
+  },
+  {
+    "id": "adobe",
+    "label": "Adobe",
+    "description": "Adobe 是创意软件公司，将 Firefly 等生成式模型集成到 Photoshop、Illustrator 等工具中，支持 AI 辅助创作。",
+    "related": ["firefly-model"],
+    "weight": 4,
+    "category": "company"
+  },
+  {
+    "id": "siliconflow",
+    "label": "SiliconFlow",
+    "description": "SiliconFlow 聚焦大模型推理和开发平台，为开发者提供高性能、低成本的大模型服务。",
+    "related": ["multimodal"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "hugging-face",
+    "label": "Hugging Face",
+    "description": "Hugging Face 是开源 AI 社区与模型托管平台，汇聚了大量开源模型与数据集，为开发者提供统一接口与工具。",
+    "related": ["open-source-model"],
+    "weight": 5,
+    "category": "company"
+  },
+  {
+    "id": "firework-ai",
+    "label": "Firework AI",
+    "description": "Firework AI 面向创意产业和内容生成场景，提供多模态生成与编辑能力。",
+    "related": ["multimodal"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "seaverse",
+    "label": "SeaVerse",
+    "description": "SeaVerse 是以 AI 原生创建为理念的平台与公司，探索从内容到交互的端到端 AI 生成流程。",
+    "related": ["seaverse-engine"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "gibo",
+    "label": "GIBO",
+    "description": "GIBO 是面向视频、图像、文本和音频生成的多模态 AIGC 品牌与平台。",
+    "related": ["gibo-multimodal-engine"],
+    "weight": 3,
+    "category": "company"
+  },
+  {
+    "id": "lepro-ami",
+    "label": "Lepro Ami",
+    "description": "Lepro Ami 是一款桌面 AI 伴侣产品，集成大模型能力辅助用户日常工作与生活。",
+    "related": ["assistant"],
+    "weight": 2,
+    "category": "company"
   }
 ]
 
