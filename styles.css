@@ -421,8 +421,36 @@ body::after {
 }
 
 @media (max-width: 840px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
   .layout {
-    grid-template-columns: minmax(0, 1fr);
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .detail-section {
+    justify-content: flex-start;
+    flex: 0 0 auto;
+  }
+
+  .word-cloud-section {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .word-cloud {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto;
   }
 }
 

@@ -424,9 +424,9 @@
     "category": "model"
   },
   {
-    "id": "nvidia-world-foundation-model",
-    "label": "NVIDIA 世界基础模型",
-    "description": "NVIDIA 世界基础模型是一类面向仿真和机器人控制的通用世界模型，用于物理仿真与策略学习。",
+    "id": "nvidia-cosmos",
+    "label": "NVIDIA Cosmos",
+    "description": "NVIDIA Cosmos 是 NVIDIA 推出的世界基础模型平台，包含 Cosmos-Predict、Cosmos-Transfer、Cosmos-Reason 等家族，用于仿真、自动驾驶和具身智能等物理 AI 场景。",
     "related": ["world-model", "nvidia"],
     "weight": 4,
     "category": "model"
@@ -675,7 +675,7 @@
     "id": "nvidia",
     "label": "NVIDIA",
     "description": "NVIDIA 是以 GPU 和加速计算著称的公司，同时也构建用于仿真和机器人控制的世界基础模型和仿真平台。",
-    "related": ["nvidia-world-foundation-model"],
+    "related": ["nvidia-cosmos"],
     "weight": 5,
     "category": "company"
   },

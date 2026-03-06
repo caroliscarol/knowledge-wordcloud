@@ -6,7 +6,10 @@
   /** @type {any[]} */
   let allItems = [];
   let currentSelectedId = null;
-  let showOnlyImportant = false;
+  const isMobileLike = window.matchMedia
+    ? window.matchMedia("(max-width: 840px)").matches
+    : window.innerWidth <= 840;
+  let showOnlyImportant = isMobileLike;
   let activeCategory = null; // null 表示全部
   let searchKeyword = "";
 
@@ -125,31 +128,11 @@
     });
   }
 
-  function bindImportantToggle() {
+  function syncImportantToggleVisual() {
     const btn = document.getElementById("toggleImportant");
     if (!btn) return;
-
-    btn.addEventListener("click", () => {
-      showOnlyImportant = !showOnlyImportant;
-      btn.classList.toggle("toggle-important--active", showOnlyImportant);
-      btn.textContent = showOnlyImportant ? "显示全部" : "只看重点词";
-
-      const visibleBefore = getVisibleItems();
-      const hadCurrentVisible =
-        currentSelectedId &&
-        visibleBefore.some((item) => item.id === currentSelectedId);
-
-      renderWordCloud();
-
-      const visibleAfter = getVisibleItems();
-      if (!visibleAfter.length) return;
-
-      if (hadCurrentVisible && visibleAfter.some((item) => item.id === currentSelectedId)) {
-        showDetailById(currentSelectedId);
-      } else {
-        showDetailById(visibleAfter[0].id);
-      }
-    });
+    btn.classList.toggle("toggle-important--active", showOnlyImportant);
+    btn.textContent = showOnlyImportant ? "显示全部" : "只看重点词";
   }
 
   function bindSearchInput() {
@@ -199,9 +182,7 @@
 
     btn.addEventListener("click", () => {
       showOnlyImportant = !showOnlyImportant;
-      btn.classList.toggle("toggle-important--active", showOnlyImportant);
-      btn.textContent = showOnlyImportant ? "显示全部" : "只看重点词";
-
+      syncImportantToggleVisual();
       const visibleBefore = getVisibleItems();
       const hadCurrentVisible =
         currentSelectedId &&
@@ -321,6 +302,7 @@
       bindSearchInput();
       bindCategoryFilters();
       bindImportantToggle();
+      syncImportantToggleVisual();
       renderWordCloud();
 
       const visible = getVisibleItems();
